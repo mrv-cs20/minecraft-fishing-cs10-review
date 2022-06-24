@@ -17,6 +17,11 @@ h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+select {
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
 .character-img {
   width: 75px;
   height: 150px;
@@ -24,18 +29,20 @@ h2 {
   margin: 0 5px;
 }
 
-.active {
-  border: 2px solid red;
+input {
+  width: 50px;
+  font-size: 18px;
 }
 
 button {
-  padding: 5px 15px;
+  padding: 2px 10px;
   cursor: pointer;
+  font-size: 18px;
 }
 
-#img-result {
-  width: 200px;
-  height: 200px;
+#result-img {
+  width: 150px;
+  height: 150px;
 }
 
 p {
