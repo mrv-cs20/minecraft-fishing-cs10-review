@@ -1,14 +1,16 @@
 // Minecraft Fishing Sim CS10 Review
 
 // Variables to store HTML Elements
-let goFishBtn = document.getElementById("go-fish-btn");
-let numFishInput = document.getElementById("num-fish");
+let fish1Btn = document.getElementById("fish-1-btn");
+let fish5Btn = document.getElementById("fish-5-btn");
+let fishUntilBtn = document.getElementById("fish-until-btn");
 let charSelect = document.getElementById("character-select");
 let resultImg = document.getElementById("result-img");
 let numCodSpan = document.getElementById("num-cod");
 let numSalmonSpan = document.getElementById("num-salmon");
 let numTropicalSpan = document.getElementById("num-tropical");
 let numPufferSpan = document.getElementById("num-puffer");
+let resetBtn = document.getElementById("reset-btn");
 
 // Global Variables
 let numCod = 0;
@@ -17,17 +19,44 @@ let numTropical = 0;
 let numPuffer = 0;
 
 // Add Event Listener to Calculate Button
-goFishBtn.addEventListener("click", goFishBtnClicked);
+fish1Btn.addEventListener("click", fish1BtnClicked);
+fish5Btn.addEventListener("click", fish5BtnClicked);
+fishUntilBtn.addEventListener("click", fishUntilClicked);
+resetBtn.addEventListener("click", resetBtnClicked);
 
-function goFishBtnClicked() {
-  // Determine # of times to fish
-  let numFish = +numFishInput.value;
+// Event handler for fish1Btn
+function fish1BtnClicked() {
+  catchFish();
+}
 
-  for (let _ = 1; _ <= numFish; _++) {
+// Event handler for fish5Btn
+function fish5BtnClicked() {
+  for (let _ = 1; _ <= 5; _++) {
     catchFish();
   }
 }
 
+// Event handler for fishUntilBtn
+function fishUntilClicked() {
+  while (numCod < 100) {
+    catchFish();
+  }
+}
+
+// Event handler for resetBtn
+function resetBtnClicked() {
+  numCod = 0;
+  numSalmon = 0;
+  numTropical = 0;
+  numPuffer = 0;
+
+  numCodSpan.innerHTML = numCod;
+  numSalmonSpan.innerHTML = numSalmon;
+  numTropicalSpan.innerHTML = numTropical;
+  numPufferSpan.innerHTML = numPuffer;
+}
+
+// Process Selected Character and Simulate Catching a Single Fish
 function catchFish() {
   // Check Selected Character
   let character = charSelect.value;

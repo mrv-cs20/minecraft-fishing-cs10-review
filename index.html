@@ -17,13 +17,13 @@
     <h1>Minecraft Fishing</h1>
     <hr />
 
-    <h2>Select a Character:</h2>
-    <p>
+    <h2>
+      Select a Character:
       <select id="character-select">
         <option value="steve">Steve</option>
         <option value="alex">Alex</option>
       </select>
-    </p>
+    </h2>
     <p>
       <img class="character-img" src="img/steve.jpg" alt="Steve" />
       <img class="character-img" src="img/alex.jpg" alt="Alex" />
@@ -32,8 +32,9 @@
 
     <h2>Simulate Fishing</h2>
     <p>
-      Number of Fish: <input id="num-fish" type="num" value="1" />
-      <button id="go-fish-btn">Go Fish</button>
+      <button id="fish-1-btn">Fish x 1</button>
+      <button id="fish-5-btn">Fish x 5</button>
+      <button id="fish-until-btn">Until 100 Cod</button>
     </p>
 
     <p>
@@ -51,6 +52,9 @@
       Tropical Fish: <span id="num-tropical">0</span> |
       <img src="img/Pufferfish.png" alt="Pufferfish" width="20px" />
       Pufferfish: <span id="num-puffer">0</span>
+    </p>
+    <p>
+      <button id="reset-btn">Reset</button>
     </p>
   </body>
 </html>
